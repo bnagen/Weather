@@ -24,6 +24,10 @@ function searchWeather(input) {
 }
 
 function init(result) {
+    if(result.weather === undefined) {
+        alert("Error: City Doesn't Exist");
+        return;
+    }
     switch(result.weather[0].main) {
         case 'Clouds':
             document.body.style.backgroundImage = 'url("./img/cloudy.jpg")';
